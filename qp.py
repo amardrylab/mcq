@@ -15,7 +15,7 @@ class Mcq:
 		self.options = []
 		count =2
 		while(count <= 5):
-			myoption = Option(fragments.group(count), string.atoi(fragments.group(6)) == count-1)
+			myoption = Option(fragments.group(count), int(fragments.group(6)) == count-1)
 			self.options.append(myoption)
 			count+=1
 			
@@ -37,11 +37,11 @@ class qp:
 			random.shuffle(elt.options)
 				
 
-
-x=qp('qp.dat')
-x.olotpalot()
-for elt in x.fullset:
-	print elt.question
-	for opt in elt.options:
-		print opt.choice,
-		print opt.ans
+if __name__ == "__main__":
+	x=qp('qp.dat')
+	x.olotpalot()
+	for elt in x.fullset:
+		print(elt.question)
+		for opt in elt.options:
+			print(opt.choice)
+			print(opt.ans)
